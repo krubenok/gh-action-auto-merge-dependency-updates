@@ -196,7 +196,7 @@ export async function run(): Promise<void> {
   const commit = await getCommit();
   const onlyPackageJsonChanged = commit.data.files.every(
     ({ filename, status }) =>
-      ['package.json', 'yarn.lock'].includes(filename) &&
+      ['package.json', 'package-locl.json', 'yarn.lock'].includes(filename) &&
       status === 'modified'
   );
   if (!onlyPackageJsonChanged) {
